@@ -27,7 +27,7 @@ public class JobPosition {
 	private int id;
 	
 	@Column(name="job_title")
-	private String title;
+	private String jobTitle;
 	
 	@Column(name="created_at", columnDefinition = "Date default CURRENT_DATE")
 	private LocalDate createdDate = LocalDate.now();
