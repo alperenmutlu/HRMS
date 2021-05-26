@@ -3,6 +3,7 @@ package project.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import project.hrms.business.abstracts.UserService;
 import project.hrms.core.utilities.results.DataResult;
@@ -12,7 +13,8 @@ import project.hrms.core.utilities.results.SuccessResult;
 import project.hrms.dataAccess.abstracts.UserDao;
 import project.hrms.entities.concretes.User;
 
-public class UserManager implements UserService {
+@Service
+public class UserManager implements UserService{
 
 	private UserDao userDao;
 	
@@ -25,36 +27,35 @@ public class UserManager implements UserService {
 	@Override
 	public Result add(User user) {
 		this.userDao.save(user);
-		return new SuccessResult("User has been added.");
+	    return new SuccessResult("User has been added.");
 	}
+//
+//	@Override
+//	public Result update(User user) {
+//		this.userDao.save(user);
+//      return new SuccessResult("User has been updated.");
+//	}
+//
+//	@Override
+//	public Result delete(int id) {
+//		this.userDao.deleteById(id);
+//      return new SuccessResult("User has been deleted.");
+//	}
+//
+//	@Override
+//	public DataResult<User> getById(int id) {
+//		return new SuccessDataResult<User>(this.userDao.getOne(id));
+//	}
 
-	
-
-	//@Override
-	//public Result update(User user) {
-	//	this.userDao.save(user);
-	//	return new SuccessResult("User has been updated");
-	//}
-
-	//@Override
-	//public Result delete(int id) {
-	//	this.userDao.deleteById(id);
-	//	return new SuccessResult("User has been deleted");
-	//}
-
-	//@Override
-	//public DataResult<User> getById(int id) {
-	//	return new SuccessDataResult<User>(this.userDao.getOne(id));
-	//}
-	
 	@Override
 	public DataResult<List<User>> getAll() {
-		return new SuccessDataResult<List<User>>(this.userDao.findAll(), "Users Listed");
+		return new SuccessDataResult<List<User>>(this.userDao.findAll(), " Users Listed!");
 	}
 
-	
 	@Override
 	public DataResult<User> getUserByEmail(String email) {
+
 		return new SuccessDataResult<User>(this.userDao.findUserByEmail(email));
 	}
+
 }

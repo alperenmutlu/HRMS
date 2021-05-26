@@ -17,7 +17,7 @@ import project.hrms.entities.concretes.JobPosition;
 @RestController
 @RequestMapping("/api/jobpositions")
 public class JobPositionsController {
-	
+
 	private JobPositionService jobPositionService;
 
 	@Autowired
@@ -26,17 +26,29 @@ public class JobPositionsController {
 		this.jobPositionService = jobPositionService;
 	}
 	
+	
 	@PostMapping("/add")
-	public Result add(@RequestBody JobPosition jobPosition) {
+	public Result add(@RequestBody JobPosition jobPosition){
 		return this.jobPositionService.add(jobPosition);
 	}
+//	
+//	@PostMapping("/update")
+//	public Result update(@RequestBody JobPosition jobPosition){
+//		return this.jobPositionService.update(jobPosition);
+//	}
+//	
+//	@PostMapping("/delete")
+//	public Result delete(@PathVariable("id") int id){
+//		return this.jobPositionService.delete(id);
+//	}
+//	
+//	@GetMapping("/getbyid")
+//	public DataResult<JobPosition> getById(@PathVariable("id") int id){
+//		return this.jobPositionService.getById(id);
+//	}
 	
-	 @GetMapping("/getall")
-	    public DataResult<List<JobPosition>> getAll(){
-	        return jobPositionService.getAll();
-	    }
-	
-	
-	
-
+	@GetMapping("/getall")
+	public DataResult<List<JobPosition>> getAll(){
+		return this.jobPositionService.getAll();
+	}
 }
