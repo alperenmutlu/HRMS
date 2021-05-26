@@ -1,5 +1,8 @@
 package project.hrms.entities.concretes;
 
+
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +26,15 @@ public class JobPosition {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="title")
+	@Column(name="job_title")
 	private String title;
+	
+	@Column(name="created_at", columnDefinition = "Date default CURRENT_DATE")
+	private LocalDate createdDate = LocalDate.now();
+	
+	@Column(name="is_active", columnDefinition = "boolean default true")
+	private boolean isActive = true;
+	
+	@Column(name="is_deleted", columnDefinition = "boolean default false")
+	private boolean isDeleted = false;
 }
