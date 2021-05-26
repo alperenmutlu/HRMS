@@ -1,5 +1,7 @@
 package project.hrms.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -27,7 +29,7 @@ public class JobSeeker extends User {
 	private String nationalId;
 	
 	@Column(name="date_of_birth")
-	private String dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	@Column(name = "is_verified", columnDefinition = "boolean default false")
 	private boolean isVerified = false;
