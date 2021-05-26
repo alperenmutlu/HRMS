@@ -31,10 +31,11 @@ public class JobPositionsController {
 		return this.jobPositionService.add(jobPosition);
 	}
 	
-	@GetMapping("/getall")
-	public DataResult<List<JobPosition>> getAll(){
-		return this.jobPositionService.getAll();
-	}
+	 @GetMapping("/getall")
+	    public DataResult<List<JobPosition>> getAll(){
+	        return jobPositionService.getAll();
+	    }
+	
 	
 	
 
