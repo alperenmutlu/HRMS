@@ -45,7 +45,7 @@ public class JobPositionManager implements JobPositionService {
 			return new ErrorResult(jobPostion.getJobTitle() + " already exists");
 		}
 		this.jobPositionDao.save(jobPostion);
-		return new SuccessResult("Job position has been successfully added!");
+		return new SuccessResult(jobPostion.getJobTitle() + " has been successfully added!");
 		
 	}
 
