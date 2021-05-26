@@ -3,6 +3,7 @@ package project.hrms.business.concretes;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import project.hrms.business.abstracts.AuthService;
 import project.hrms.business.abstracts.EmployerService;
@@ -18,6 +19,7 @@ import project.hrms.entities.concretes.Employer;
 import project.hrms.entities.concretes.JobSeeker;
 import project.hrms.entities.concretes.VerificationCode;
 
+@Service
 public class AuthManager implements AuthService{
 
 	private UserService userService;
