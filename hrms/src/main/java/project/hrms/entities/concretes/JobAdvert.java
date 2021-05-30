@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "job_adverts")
-public class JobAdvert {
+public class JobAdvert{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
