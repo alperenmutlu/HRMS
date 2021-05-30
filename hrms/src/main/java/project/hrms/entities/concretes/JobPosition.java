@@ -44,5 +44,5 @@ public class JobPosition {
 	private boolean isDeleted = false;
 	
 	@OneToMany(mappedBy = "jobPosition")
-	private List<JobAdvert> jobAdverts;
+	private List<JobAdvert> jobAdverts; 
 }
