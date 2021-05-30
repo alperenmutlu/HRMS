@@ -21,9 +21,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "job_adverts")
 public class JobAdvert {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
@@ -36,7 +36,7 @@ public class JobAdvert {
 //	@Column(name = "city_id")
 //	private int cityId;
 	
-	@Column(name = "decription")
+	@Column(name = "description")
 	private String description;
 	
 	@Column(name = "salary_min")
@@ -49,7 +49,7 @@ public class JobAdvert {
 	private int openPositionCount;
 	
 	@Column(name = "deadline")
-	private LocalDate deadLine;
+	private LocalDate deadline;
 	
 	@Column(name = "published_at")
 	private LocalDate publishedAt;
