@@ -16,7 +16,7 @@ import project.hrms.core.utilities.results.Result;
 import project.hrms.entities.concretes.City;
 
 @RestController
-@RequestMapping("/api/city")
+@RequestMapping("/api/cities")
 public class CitiesController {
 
 	private CityService cityService;
