@@ -8,6 +8,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +19,7 @@ import lombok.NoArgsConstructor;
 @PrimaryKeyJoinColumn(name="user_id")
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdverts"})
 @Table(name="employers")
 public class Employer extends User{
 	
@@ -37,5 +40,6 @@ public class Employer extends User{
 	@Column(name="is_verified", columnDefinition = "boolean default false")
 	private boolean isVerified = false;
 	
-	
+	@OneToMany(mappedBy = "employer")
+	private List<JobAdvert> jobAdverts;
 }
