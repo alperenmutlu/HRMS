@@ -33,4 +33,17 @@ public class City {
 	
 	@OneToMany(mappedBy = "city")
 	private List<JobAdvert> jobAdverts;
+	
+	@Column(name= "is_active", columnDefinition = "boolean default true")
+	private boolean isActive = true;
+	
+	@Column(name= "is_deleted", columnDefinition = "boolean default false")
+	private boolean isDeleted = false;
+
+	public City(int id, String name, List<JobAdvert> jobAdverts) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.jobAdverts = jobAdverts;
+	}
 }

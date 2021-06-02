@@ -37,11 +37,16 @@ public class VerificationCode {
 	@Column(name="created_at", columnDefinition = "Date defult CURRENT_DATE")
 	private LocalDate createAt = LocalDate.now();
 	
-	public VerificationCode(int userId, String code, boolean isConfirmed, LocalDate createAt) {
+	@Column(name= "is_active", columnDefinition = "boolean default true")
+	private boolean isActive = true;
+	
+	@Column(name= "is_deleted", columnDefinition = "boolean default false")
+	private boolean isDeleted = false;
+	
+	public VerificationCode(int userId, String code, boolean isConfirmed) {
 		super();
 		this.userId = userId;
 		this.code = code;
 		this.isConfirmed = isConfirmed;
-		this.createAt = createAt;
 	}
 }
