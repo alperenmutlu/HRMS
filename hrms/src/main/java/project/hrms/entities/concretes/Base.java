@@ -27,7 +27,7 @@ public class Base {
 	private LocalDate createdAt = LocalDate.now();
 	
 	@JsonIgnore
-	@Column(name="is_active",columnDefinition = "boolean default true")
+	@Column(name="is_active", columnDefinition = "boolean default true")
 	private boolean isActive = true;
 	
 	@JsonIgnore
