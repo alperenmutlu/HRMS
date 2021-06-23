@@ -2,6 +2,7 @@ package project.hrms.api.controllers;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import project.hrms.entities.concretes.Employee;
 
 @RestController
 @RequestMapping("/api/employees")
+@CrossOrigin
 public class EmployeesController {
 	
 	private EmployeeService employeeService;
@@ -25,10 +27,10 @@ public class EmployeesController {
 		this.employeeService = employeeService;
 	}
 	
-	//@PostMapping("/add")
-	//public Result add(@RequestBody Employee employee) {
-	//	return this.employeeService.add(employee);
-	//}
+	@PostMapping("/add")
+	public Result add(@RequestBody Employee employee) {
+		return this.employeeService.add(employee);
+	}
 	
 	//@PostMapping("/update")
 	//public Result update(@RequestBody Employee employee) {
